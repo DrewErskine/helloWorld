@@ -1,0 +1,36 @@
+# Node modules
+node_modules
+
+# Logs
+logs
+*.log
+
+# Dependency directories
+puppeteer/downloads/
+puppeteer/node_modules/
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Editor-specific files
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# IDE settings
+.idea/
+*.suo
+*.ntvs*
+
+# Compiled binary addons (if any)
+/build/Release
+
+# Dependency lock file
+package-lock.json
+
+# OS generated files
+.DS_Store
+Thumbs.db

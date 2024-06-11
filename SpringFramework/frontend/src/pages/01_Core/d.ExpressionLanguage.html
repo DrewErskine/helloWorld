@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expression Language (SpEL)</title>
+  </head>
+  <body>
+    <h1>Expression Language (SpEL)</h1>
+    <p>
+      Spring Expression Language (SpEL) is a powerful language that supports
+      querying and manipulating an object graph at runtime. It is similar to
+      other expression languages but integrates seamlessly with Spring.
+    </p>
+    <h2>Example</h2>
+    <pre><code>@Value("#{T(java.lang.Math).random() * 100.0}")
+private double randomNumber;
+
+@Value("#{exampleService.someProperty}")
+private String someProperty;
+    </code></pre>
+    <h2>Usage</h2>
+    <h3>Annotations</h3>
+    <pre><code>@Component
+public class ExampleComponent {
+    @Value("#{exampleBean.someProperty}")
+    private String someProperty;
+}
+    </code></pre>
+    <h3>XML Configuration</h3>
+    <pre><code>&lt;bean id="exampleBean" class="com.example.ExampleBean"&gt;
+    &lt;property name="someProperty" value="#{anotherBean.someOtherProperty}" /&gt;
+&lt;/bean&gt;
+    </code></pre>
+  </body>
+</html>

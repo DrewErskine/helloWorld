@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dependency Injection</title>
+  </head>
+  <body>
+    <h1>Dependency Injection</h1>
+    <p>
+      Dependency Injection (DI) is a design pattern used to implement IoC
+      (Inversion of Control), allowing the creation of dependent objects outside
+      of a class and providing those objects to the class. In Spring, DI is a
+      core feature, making the application loosely coupled, easier to test, and
+      more maintainable.
+    </p>
+    <h2>Types of Dependency Injection</h2>
+    <h3>Constructor Injection</h3>
+    <pre><code>@Component
+public class ExampleService {
+    private final ExampleRepository repository;
+
+    @Autowired
+    public ExampleService(ExampleRepository repository) {
+        this.repository = repository;
+    }
+}
+    </code></pre>
+    <h3>Setter Injection</h3>
+    <pre><code>@Component
+public class ExampleService {
+    private ExampleRepository repository;
+
+    @Autowired
+    public void setRepository(ExampleRepository repository) {
+        this.repository = repository;
+    }
+}
+    </code></pre>
+    <h3>Field Injection</h3>
+    <pre><code>@Component
+public class ExampleService {
+    @Autowired
+    private ExampleRepository repository;
+}
+    </code></pre>
+  </body>
+</html>

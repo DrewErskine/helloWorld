@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bean Management</title>
+  </head>
+  <body>
+    <h1>Bean Management</h1>
+    <p>
+      In Spring, a bean is an object that is managed by the Spring IoC
+      container. Beans are central to the Spring framework, and bean management
+      is a key aspect of the container's functionality.
+    </p>
+    <h2>Bean Definition</h2>
+    <h3>XML Configuration</h3>
+    <pre><code>&lt;bean id="exampleService" class="com.example.ExampleService" /&gt;
+    </code></pre>
+    <h3>Annotations</h3>
+    <pre><code>@Component
+public class ExampleService {
+    // class body
+}
+    </code></pre>
+    <h3>Java Configuration</h3>
+    <pre><code>@Configuration
+public class AppConfig {
+    @Bean
+    public ExampleService exampleService() {
+        return new ExampleService();
+    }
+}
+    </code></pre>
+    <h2>Bean Scopes</h2>
+    <ul>
+      <li>
+        Singleton: A single instance per Spring container (default scope).
+      </li>
+      <li>Prototype: A new instance for each request.</li>
+      <li>Request: A single instance per HTTP request.</li>
+      <li>Session: A single instance per HTTP session.</li>
+      <li>Global Session: A single instance per global HTTP session.</li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code>@Bean
+@Scope("prototype")
+public ExampleService exampleService() {
+    return new ExampleService();
+}
+    </code></pre>
+  </body>
+</html>

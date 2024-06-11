@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Context</title>
+  </head>
+  <body>
+    <h1>Application Context</h1>
+    <p>
+      The Application Context is the central interface to the Spring IoC
+      container. It is responsible for instantiating, configuring, and
+      assembling beans.
+    </p>
+    <h2>Types of ApplicationContext</h2>
+    <ul>
+      <li>
+        ClassPathXmlApplicationContext: Loads context definition from an XML
+        file in the classpath.
+      </li>
+      <li>
+        FileSystemXmlApplicationContext: Loads context definition from an XML
+        file in the file system.
+      </li>
+      <li>
+        AnnotationConfigApplicationContext: Loads context from annotated classes
+        and Java-based configuration.
+      </li>
+    </ul>
+    <h3>Example</h3>
+    <pre><code>ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+ExampleService service = context.getBean(ExampleService.class);
+    </code></pre>
+  </body>
+</html>
